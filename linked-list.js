@@ -20,18 +20,27 @@ export default class LinkedList {
         this.size++;
     }
 
+    prepend(value) {
+        const newNode = new Node(value);
+        if(this.head === null) {
+            this.head = newNode;
+            this.tail = newNode;
+        }
+        else {
+            newNode.nextNode = this.head;
+            this.head = newNode;
+        }
+        this.size++;
+    }
+
     toString() {
         let stringToReturn = "";
         let currentNode = this.head;
         while (currentNode !== null) {
-            if(currentNode.nextNode !== null) {
-                stringToReturn += `( ${currentNode.value} ) -> ( ${currentNode.nextNode.value} ) -> `;
-            }
-            else {
-                stringToReturn += null;
-            }
+            stringToReturn += `( ${currentNode.value} ) -> `;
             currentNode = currentNode.nextNode;
         }
+        stringToReturn += null;
         return stringToReturn;
     }
 }
