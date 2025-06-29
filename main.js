@@ -2,4 +2,5 @@ import LinkedList from "./linked-list.js";
 
 const myLinkedList = new LinkedList();
 myLinkedList.append("chicken");
-console.log(String(myLinkedList));
+myLinkedList.append("chicken nugget");
+console.log(myLinkedList.toString());

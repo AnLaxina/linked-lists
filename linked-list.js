@@ -14,19 +14,24 @@ export default class LinkedList {
             this.tail = newNode;
         }
         else {
-            const copyOfLastNode = this.tail;
             this.tail.nextNode = newNode;
-            this.tail = newNode; 
+            this.tail = newNode;
         }
         this.size++;
     }
 
     toString() {
         let stringToReturn = "";
-        while (this.head !== null) {
-            stringToReturn += `(${this.head}) -> `;
-            this.head = this.head;
+        let currentNode = this.head;
+        while (currentNode !== null) {
+            if(currentNode.nextNode !== null) {
+                stringToReturn += `( ${currentNode.value} ) -> ( ${currentNode.nextNode.value} ) -> `;
+            }
+            else {
+                stringToReturn += null;
+            }
+            currentNode = currentNode.nextNode;
         }
-        return "I love chicken";
+        return stringToReturn;
     }
 }
