@@ -47,6 +47,36 @@ export default class LinkedList {
         return null;
     }
 
+    // Since this implementation is a singly linked list, we need to iterate through the entire
+    // list and only stop when we've hit the second last node (the one right before this.tail)
+    pop() {
+        
+        if(this.head === null && this.tail === null) {
+            return null;
+        }
+        else if(this.head === this.tail) {
+            const copyOfTail = this.tail;
+            this.head = null;
+            this.tail = null;
+            this.size--;
+            return copyOfTail;
+        }
+        else {
+            // Once this while loop finishes, currentNode would have been the second to last node
+            let currentNode = this.head;
+            let copyOfTail = this.tail;
+            while(currentNode !== null && currentNode.nextNode !== copyOfTail) {
+                currentNode = currentNode.nextNode;
+            }
+            currentNode.nextNode = null;
+            this.tail = currentNode;
+            this.size--;
+            return copyOfTail;
+        }
+
+
+    }
+
     toString() {
         let stringToReturn = "";
         let currentNode = this.head;
