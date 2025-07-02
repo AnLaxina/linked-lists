@@ -1,13 +1,16 @@
 import LinkedList from "./linked-list.js";
 
-const myLinkedList = new LinkedList();
-myLinkedList.append("Chicken");
-console.log("Initial linked list: ");
-console.log(myLinkedList.toString());
+// example testing
+const list = new LinkedList();
 
-myLinkedList.insertAt("Lego", 0);
-myLinkedList.insertAt("Mega Bloks", 2)
-console.log(myLinkedList.toString());
+list.append("dog");
+list.append("cat");
+list.append("parrot");
+list.append("hamster");
+list.append("snake");
+list.append("turtle");
+
+console.log(list.toString());
 
 
 
