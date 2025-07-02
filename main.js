@@ -7,7 +7,8 @@ myLinkedList.append("Lego Star Wars");
 console.log("Initial linked list: ");
 console.log(myLinkedList.toString());
 
-console.log(`Does it contain Chicken: ${myLinkedList.contains("Chicken")}`);
-console.log(`Does it include burgers: ${myLinkedList.contains("burgers")}`);
+console.log(`The index of Chicken is: ${myLinkedList.find("Chicken")}`);
+console.log(`The index of Lego Star Wars is: ${myLinkedList.find("Lego Star Wars")}`);
+console.log(`The index of Something is: ${myLinkedList.find("Something")}`);
 
 
