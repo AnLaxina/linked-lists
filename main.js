@@ -7,12 +7,7 @@ myLinkedList.append("Lego Star Wars");
 console.log("Initial linked list: ");
 console.log(myLinkedList.toString());
 
-myLinkedList.pop();
-console.log("After first pop:");
-console.log(myLinkedList.toString());
-
-myLinkedList.pop();
-console.log("After second pop:");
-console.log(myLinkedList.toString());
+console.log(`Does it contain Chicken: ${myLinkedList.contains("Chicken")}`);
+console.log(`Does it include burgers: ${myLinkedList.contains("burgers")}`);
 
 
