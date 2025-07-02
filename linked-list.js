@@ -105,6 +105,32 @@ export default class LinkedList {
 
     }
 
+    insertAt(value, index) {
+        if(index === 0) {
+            this.prepend(value);
+        }
+        else if(index === this.size) {
+            this.append(value);
+        }
+        else if(index < 0 || index > this.size) {
+            console.log("Can't insert a value there!")
+            return null;
+        }
+        else {
+            let currentNode = this.head;
+            let currentIndex = 0;
+            while(currentIndex < this.size - 1) {
+                currentNode = currentNode.nextNode;
+                currentIndex++;
+            }
+            const newNode = new Node(value);
+            newNode.nextNode = currentNode.nextNode;
+            currentNode.nextNode = newNode;
+            this.size++;
+
+        }
+    }
+
     toString() {
         let stringToReturn = "";
         let currentNode = this.head;
